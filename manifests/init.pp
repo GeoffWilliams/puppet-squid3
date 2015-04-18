@@ -41,7 +41,7 @@ class squid3 (
   $server_persistent_connections = 'on',
   $maximum_object_size           = '4096 KB',
   $maximum_object_size_in_memory = '512 KB',
-  $config_hash                   = {},
+  $config                        = [],
   $refresh_patterns              = [],
   $template                      = 'long',
 ) inherits ::squid3::params {
@@ -52,8 +52,8 @@ class squid3 (
     default => $template,
   }
 
-  if ! empty($config_hash) and $use_template == 'long' {
-    fail('$config_hash does not (yet) work with the "long" template!')
+  if ! empty($config) and $use_template == 'long' {
+    fail('$config does not (yet) work with the "long" template!')
   }
 
 

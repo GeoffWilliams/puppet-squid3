@@ -94,7 +94,7 @@ refresh_pattern                -i (/cgi-bin/|\?)     0     0%        0
 refresh_pattern                .                     0    20%     4320
 
 
-# user-defined configuration settings from config_hash
-<% @config_hash.each do |k,v| -%>
-<%= "%*s"%[-30,k] %> <%= v %>
+# user-defined configuration settings from config
+<% @config.each do |v| -%>
+<%= v %>
 <% end -%>
